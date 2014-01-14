@@ -44,7 +44,7 @@ while sum(D==0)>0 % If there is units which are not processed yet...
     end;
     if np> 1 || ind<=m1+m2
         % uncomment the following line to see the progress of the algorithm
-%         fprintf('iteration: %d, unit: %d, and %d units left \n',ind, k ,(sum(D==0)))
+        fprintf('iteration: %d, unit: %d, and %d units left \n',ind, k ,(sum(D==0)))
 
         rows_T=np*nn+nz; %Number of rows of A, #columns is tau
         Z=T(:,1:m1+m2)*U(:,O(1:ind-1 ));
@@ -57,7 +57,7 @@ while sum(D==0)>0 % If there is units which are not processed yet...
             dimensions=(z+ weak)>=m1+m2-2;
             [row, col]=find(dimensions);
             pairs=[col row];
-        else
+        else       
             rows_z_n=find(sum(z_n(:,sum(z_p(1:end-1,:),1)>0),2)>=m1+m2 );
             z=single(z_p(1:end-1,:)*z_n(rows_z_n,:)');
             dimensions=z>=m1+m2-2;

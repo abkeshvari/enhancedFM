@@ -1,10 +1,10 @@
 %%% Define the probelm here
-% load('data.mat');
-% units=(1:size(data,1))';%The list of units.
+load('data.mat'); % Load electricity companies dataset
+units=(1:size(data,1))';%The list of units.
 m1=1;m2=3; %Specify the number of inputs (m1) and outputs (m2)
 
 uniq=4; %Accuracy setting
-algorithms=1; %1: only FM algorithm, 2: only Qhull, 3: both
+algorithms=3; %1: only FM algorithm, 2: only Qhull, 3: both
 clc;
 if algorithms==1 || algorithms==3
     %%% Run FM algorithm
@@ -49,4 +49,6 @@ if algorithms==2 || algorithms==3
 %     Eff=EffN./EffD;
 %     Eff_Q=max(Eff,[],1)'; %Efficiency scores
 end;
-clearvars A D Eff EffD EffN Mat Tm Tq results status ;
+fprintf('\n ****\nNormal vectors: matrix T for enhanced FM, matrix TQ for Qhull.\n')
+fprintf('The first m2 columns are coefficients of outputs, and the next m1 columns are coefficients of inputs.\n')
+% clearvars A D Eff EffD EffN Mat Tm Tq results status ;
