@@ -16,6 +16,7 @@ if algorithms==1 || algorithms==3
     
     T=roundn(normr(Tm(:,1:m1+m2)),-uniq);T(all(T(:,1:m2)==0,2),:)=[];
    %%% Calculate efficiency scores, and the unique facets from FM algorithm
+   %%% Uncomment the lines below to get the efficiency scores
 %     EffN=Tm(:,1:m2)*data(units,m1+1:end)';
 %     EffD=Tm(:,m2+1:m2+m1)*data(units,1:m1)';
 %     Eff=EffN./EffD;
@@ -24,8 +25,10 @@ end;
 
 if algorithms==2 || algorithms==3
     %%% Initialize Qhull. Make sure the folder "qhull-2012.1" is located next to the script file
-    bigM=10^2;
-    D= normr(data(units,:));
+    bigM=10^10;
+    %Normalize the data: use the commane normr to normalize data, or remove
+    %it to use the original data
+    D= normr(data(units,:)); 
     Mat=[D;zeros(1,m1+m2);bigM*eye(m1) zeros(m1,m2); zeros(m2,m1) -bigM*eye(m2)];
     dlmwrite('.\qhull-2012.1\data', [m1+m2;length(units)+m1+m2+1] );
     save '.\qhull-2012.1\data' Mat -ASCII  '-append'
@@ -44,6 +47,7 @@ if algorithms==2 || algorithms==3
     TQ=roundn(normr(Tq(:,1:m1+m2)),-uniq);TQ(all(TQ(:,1:m2)==0,2),:)=[];
     
     %%% Calculate efficiency scores, and the unique facets from Qhull
+    %%% Uncomment the lines below to get the efficiency scores
 %     EffN=Tq(:,1:m2)*data(units,m1+1:end)';
 %     EffD=Tq(:,m2+1:m2+m1)*data(units,1:m1)';
 %     Eff=EffN./EffD;
