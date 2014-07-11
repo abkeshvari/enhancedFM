@@ -19,7 +19,7 @@ while sum(D==0)>0 % If there is units which are not processed yet...
         Z1=min(Z1 ,[],1);
         [~,k]=max(Z1);
     else
-        k=ind;
+        k=1;
     end;
     k=Unprocessed(k); % The unit with maximum efficiency is chosen to be processed
     if ind<=m1+m2 % For the artificial units just follow the order of units
