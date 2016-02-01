@@ -1,4 +1,6 @@
 function [T]=FM_ver1(X,m1,m2)
+%%% Please cite the paper properly if you use the code. 
+%%% "Keshvari, Abolfazl. 2016. An Enhanced Fourier-Motzkin Method for DEA."
 pres=-10;
 X=[eye(m1) zeros(m1,m2); zeros(m2,m1) -eye(m2);X]; %Make the matrix
 n= size(X,1);% Number of units
