@@ -1,3 +1,5 @@
+%%% Please cite the paper properly if you use the code. 
+%%% "Keshvari, Abolfazl. 2016. An Enhanced Fourier-Motzkin Method for DEA."
 %%% Define the probelm here
 load('data.mat'); % Load electricity companies dataset
 units=(1:size(data,1))';%The list of units.
