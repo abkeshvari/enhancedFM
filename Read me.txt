@@ -1,3 +1,6 @@
 If you download the zip file, please unzip first and then use the files.
 
 It is better to change the working directory in Matlab.
+
+Please cite the paper properly if you use the code. 
+"Keshvari, Abolfazl. 2016. An Enhanced Fourier-Motzkin Method for DEA."
